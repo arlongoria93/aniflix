@@ -14,7 +14,7 @@ export default function Home() {
       </p>
       <p>
         But a recent study shows that the celebrated appetizer may be linked to
-        a series of rabies cases springing up around the country.
+        a serises of rabies cases springing up around the country.
       </p>
     </article>
   );
