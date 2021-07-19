@@ -13,7 +13,13 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      mainBG: "#262626",
+      secondaryBG: "#D1977F",
+      primaryText: "#9CDCFE",
+      secondaryText: "#6EAAD0",
+      hoverBG: "#56585D",
     },
+    fontFamily: { display: "aileron, sans-serif" },
     extend: {},
   },
   variants: {
