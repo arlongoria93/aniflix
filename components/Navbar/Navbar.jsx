@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Navbar = () => {
   return (
-    <nav className="bg-yellow-200">
+    <nav className="bg-mainBG text-white">
       <div className="flex justify-between py-2 px-4">
         <div className="flex items-center">
           <Link href="/">
@@ -19,18 +19,22 @@ const Navbar = () => {
         <div className="flex items-center w-2/5">
           <input
             type="text"
-            className="w-full  px-1 py-1 rounded-lg bg-mainBG font-display  focus:outline-none focus:ring-2 focus:ring-secondaryBG focus:border-transparent "
+            className="w-full  transition duration-500 border border-lighterBG text-secondaryBG px-1 py-1 rounded-lg bg-mainBG font-display  focus:outline-none focus:ring-2 focus:ring-secondaryBG focus:border-transparent "
             placeholder=" search"
           />
         </div>
 
-        <div className=" text-right cursor-pointer">
+        <div className="cursor-pointer">
           <div className="flex items-center">
-            <Link href="/profile">
-              <a>
-                <Image src="/images/avatars/male.svg" width={35} height={35} />
-              </a>
-            </Link>
+            <div className="flex  transition duration-500 border border-lighterBG hover:border-secondaryBG rounded-full">
+              <Image
+                src="/images/avatars/female.svg"
+                objectFit="cover"
+                width={35}
+                height={35}
+                objectPosition="center"
+              />
+            </div>
           </div>
         </div>
       </div>
