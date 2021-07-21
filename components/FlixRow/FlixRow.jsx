@@ -18,13 +18,13 @@ const FlixRow = (props) => {
   return (
     <>
       {/* Small Screen Slider */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-2">
         <div>
-          <h1 className="font-display text-white">{props.title}</h1>
+          <h1 className="font-display text-xl text-white">{props.title}</h1>
         </div>
-        <div className="flex items-center justify-between space-x-1">
+        <div className="flex items-center justify-between">
           <button className={prev}>
-            <div className="transition text-white duration-500 p-2  hover:text-secondaryBG">
+            <div className="transition text-white duration-500 p-1  hover:text-secondaryBG">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -44,7 +44,7 @@ const FlixRow = (props) => {
 
           <button className={next}>
             {" "}
-            <div className="transition text-white duration-500 p-2  hover:text-secondaryBG">
+            <div className="transition text-white duration-500  hover:text-secondaryBG">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 "
@@ -65,61 +65,19 @@ const FlixRow = (props) => {
       </div>
 
       <Swiper
+        breakpoints={{
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 9 },
+        }}
         spaceBetween={50}
         slidesPerView={3}
         navigation={{
           nextEl: `.next${props.nav}`,
           prevEl: `.prev${props.nav}`,
         }}
-        className="mySwiper sm:block lg:hidden"
+        className="mySwiper"
       >
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>
-      </Swiper>
-
-      <Swiper
-        slidesPerView={8}
-        spaceBetween={0}
-        navigation={{
-          nextEl: `.next${props.nav}`,
-          prevEl: `.prev${props.nav}`,
-        }}
-        className="mySwiper sm:hidden lg:block"
-      >
+        {" "}
         <SwiperSlide>
           <Image
             src="/images/cover/cover.jpg"
@@ -164,25 +122,7 @@ const FlixRow = (props) => {
             objectFit="cover"
             className="z-0 rounded"
           />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image
-            src="/images/cover/cover.jpg"
-            width={200}
-            height={300}
-            objectFit="cover"
-            className="z-0 rounded"
-          />
-        </SwiperSlide>{" "}
+        </SwiperSlide>
         <SwiperSlide>
           <Image
             src="/images/cover/cover.jpg"
@@ -219,7 +159,15 @@ const FlixRow = (props) => {
             className="z-0 rounded"
           />
         </SwiperSlide>
-        {/* Large Screen Slider */}
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>
       </Swiper>
     </>
   );
