@@ -18,13 +18,13 @@ const FlixRow = (props) => {
   return (
     <>
       {/* Small Screen Slider */}
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <div>
           <h1 className="font-display text-white">{props.title}</h1>
         </div>
-        <div>
+        <div className="flex items-center justify-between space-x-1">
           <button className={prev}>
-            <div className="transition duration-500  hover:scale-110 hover:text-brightBG">
+            <div className="transition text-white duration-500 p-2  hover:text-secondaryBG">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -41,21 +41,25 @@ const FlixRow = (props) => {
               </svg>
             </div>
           </button>
+
           <button className={next}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            {" "}
+            <div className="transition text-white duration-500 p-2  hover:text-secondaryBG">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 "
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
           </button>
         </div>
       </div>
@@ -108,7 +112,7 @@ const FlixRow = (props) => {
       </Swiper>
 
       <Swiper
-        slidesPerView={5}
+        slidesPerView={8}
         spaceBetween={0}
         navigation={{
           nextEl: `.next${props.nav}`,
@@ -116,6 +120,69 @@ const FlixRow = (props) => {
         }}
         className="mySwiper sm:hidden lg:block"
       >
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <Image
+            src="/images/cover/cover.jpg"
+            width={200}
+            height={300}
+            objectFit="cover"
+            className="z-0 rounded"
+          />
+        </SwiperSlide>{" "}
         <SwiperSlide>
           <Image
             src="/images/cover/cover.jpg"
