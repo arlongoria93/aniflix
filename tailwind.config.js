@@ -15,6 +15,7 @@ module.exports = {
       yellow: colors.amber,
       mainBG: "#262626",
       lighterBG: "#38393C",
+      brightBG: "#C8714E",
       secondaryBG: "#D1977F",
       primaryText: "#9CDCFE",
       secondaryText: "#6EAAD0",

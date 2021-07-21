@@ -1,19 +1,28 @@
 import FeaturedRow from "../components/FeaturedRow/FeaturedRow";
+import FlixRow from "../components/FlixRow/FlixRow";
 import Navbar from "../components/Navbar/Navbar";
 
 const Layout = () => {
   return (
-    <div className="bg-red-400 h-100">
+    <div className="bg-mainBG h-screen">
       <Navbar />
-      <div className="grid grid-cols-1 grid-rows-6 border border-black divide-y divide-black mt-5">
+      <div className="grid grid-cols-1 grid-rows-1 mt-5 ">
         <div className="row-span-3">
-          <FeaturedRow />
+          <FeaturedRow image="/images/featured/featured.png" />
         </div>
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
-        <div></div>
-        <div></div>
+      </div>
+      <div className="grid grid-rows-3 grid-cols-1">
+        <div className="p-4">
+          <FlixRow nav={"mp"} />
+        </div>
+
+        <div className="p-4">
+          <FlixRow nav={"ra"} />
+        </div>
+
+        <div className="p-4">
+          <FlixRow nav={"idk"} />
+        </div>
       </div>
       <div className="text-primaryText">Footer</div>
     </div>
