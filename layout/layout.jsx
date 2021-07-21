@@ -13,15 +13,15 @@ const Layout = () => {
       </div>
       <div className="grid grid-rows-3 grid-cols-1">
         <div className="p-4">
-          <FlixRow nav={"mp"} />
+          <FlixRow nav={"mp"} title={"Most Popular"} />
         </div>
 
         <div className="p-4">
-          <FlixRow nav={"ra"} />
+          <FlixRow nav={"ra"} title={"Recently Added"} />
         </div>
 
         <div className="p-4">
-          <FlixRow nav={"idk"} />
+          <FlixRow nav={"idk"} title={"Top 2021"} />
         </div>
       </div>
       <div className="text-primaryText">Footer</div>

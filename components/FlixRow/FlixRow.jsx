@@ -20,22 +20,54 @@ const FlixRow = (props) => {
       {/* Small Screen Slider */}
       <div className="flex justify-between">
         <div>
-          <h1>Genre</h1>
+          <h1 className="font-display text-white">{props.title}</h1>
         </div>
         <div>
-          <button className={next}>Prev</button>
-          <button className={prev}>Next</button>
+          <button className={prev}>
+            <div className="transition duration-500  hover:scale-110 hover:text-brightBG">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+            </div>
+          </button>
+          <button className={next}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
       <Swiper
         spaceBetween={50}
         slidesPerView={3}
-        loop
         navigation={{
           nextEl: `.next${props.nav}`,
           prevEl: `.prev${props.nav}`,
         }}
+        className="mySwiper sm:block lg:hidden"
       >
         <SwiperSlide>
           <Image
@@ -78,8 +110,9 @@ const FlixRow = (props) => {
       <Swiper
         slidesPerView={5}
         spaceBetween={0}
-        pagination={{
-          clickable: true,
+        navigation={{
+          nextEl: `.next${props.nav}`,
+          prevEl: `.prev${props.nav}`,
         }}
         className="mySwiper sm:hidden lg:block"
       >
