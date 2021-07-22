@@ -1,6 +1,7 @@
 import FeaturedRow from "../components/FeaturedRow/FeaturedRow";
 import FlixRow from "../components/FlixRow/FlixRow";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const Layout = () => {
   return (
@@ -24,7 +25,7 @@ const Layout = () => {
           <FlixRow nav={"idk"} title={"Top 2021"} />
         </div>
       </div>
-      <div className="text-primaryText">Footer</div>
+      <Footer />
     </div>
   );
 };

@@ -77,9 +77,8 @@ const FlixRow = (props) => {
         }}
         className="mySwiper"
       >
-        {" "}
         <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} />
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
         </SwiperSlide>
       </Swiper>
     </>

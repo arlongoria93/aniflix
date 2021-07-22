@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+
 const FlixItem = (props) => {
   return (
-    <Link href="/">
+    <Link href={"/anime/" + props.id}>
       <a>
         <Image
           src={props.img}
