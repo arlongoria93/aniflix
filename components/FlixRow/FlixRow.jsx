@@ -8,7 +8,6 @@ import "swiper/components/navigation/navigation.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import FlixItem from "../FlixItem/FlixItem";
 import styles from "./FlixRow.module.css";
-import Image from "next/image";
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -67,7 +66,7 @@ const FlixRow = (props) => {
       <Swiper
         breakpoints={{
           640: { slidesPerView: 3 },
-          1024: { slidesPerView: 9 },
+          1024: { slidesPerView: 6 },
         }}
         spaceBetween={50}
         slidesPerView={3}
@@ -77,6 +76,33 @@ const FlixRow = (props) => {
         }}
         className="mySwiper"
       >
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide>
         <SwiperSlide>
           <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
         </SwiperSlide>
