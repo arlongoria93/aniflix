@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Head from "next/head";
 import Footer from "../../components/Footer/Footer";
+import { useRouter } from "next/router";
 
 const Details = () => {
   const router = useRouter();

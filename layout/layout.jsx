@@ -3,7 +3,7 @@ import FlixRow from "../components/FlixRow/FlixRow";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <div className="bg-mainBG h-screen">
       <Navbar />
@@ -14,15 +14,15 @@ const Layout = () => {
       </div>
       <div className="grid grid-rows-3 grid-cols-1">
         <div className="p-4">
-          <FlixRow nav={"mp"} title={"Most Popular"} />
+          <FlixRow nav={"mp"} title={"Most Popular"} media={props.media} />
         </div>
 
         <div className="p-4">
-          <FlixRow nav={"ra"} title={"Recently Added"} />
+          <FlixRow nav={"ra"} title={"Recently Added"} media={props.media} />
         </div>
 
         <div className="p-4">
-          <FlixRow nav={"idk"} title={"Top 2021"} />
+          <FlixRow nav={"idk"} title={"Top 2021"} media={props.media} />
         </div>
       </div>
       <Footer />

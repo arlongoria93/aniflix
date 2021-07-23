@@ -1,9 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { handleError, handleData, handleResponse } from "../util/helper";
 
-
-var query = `
+export default function Home(props) {
+  const { data } = props;
+  return <article className="prose lg:prose-xl">{console.log(data)}</article>;
+}
+export async function getStaticProps(context) {
+  var query = `
   query($page: Int = 1 $id: Int $type: MediaType $isAdult: Boolean = false $search: String $format: [MediaFormat]$status: MediaStatus $countryOfOrigin: CountryCode $source: MediaSource $season: MediaSeason $seasonYear: Int $year: String $onList: Boolean $yearLesser: FuzzyDateInt $yearGreater: FuzzyDateInt $episodeLesser: Int $episodeGreater: Int $durationLesser: Int $durationGreater: Int $chapterLesser: Int $chapterGreater: Int $volumeLesser: Int $volumeGreater: Int $licensedBy: [String]$genres: [String]$excludedGenres: [String]$tags: [String]$excludedTags: [String]$minimumTagRank: Int $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC])
 {
   Page(page: $page, perPage: 20) {
@@ -63,81 +68,53 @@ var query = `
           }
         }
       }
-      rankings{ 
-        id 
-        rank 
-        type format 
-        year 
-        season 
-        allTime 
-        context 
-      } 
+      rankings{
+        id
+        rank
+        type format
+        year
+        season
+        allTime
+        context
+      }
     }
   }
 }
 `;
-// Define our query variables and values that will be used in the query request
-// var variables = {
-//   id: 15125
-// };
+  // Define our query variables and values that will be used in the query request
+  // var variables = {
+  //   id: 15125
+  // };
 
-var variables = {
-  "page": 1,
-  // "id": "116742",
-  "type": "ANIME",
-  // "seasonYear": 2021,
-  // "season": "SUMMER",
-  // "trending": 
-}
-
-// Define the config we'll need for our Api request
-var url = 'https://graphql.anilist.co',
-  options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: variables
-    })
+  var variables = {
+    page: 1,
+    // "id": "116742",
+    type: "ANIME",
+    // "seasonYear": 2021,
+    // "season": "SUMMER",
+    // "trending":
   };
 
-// Make the HTTP Api request
-fetch(url, options).then(handleResponse)
-  .then(handleData)
-  .catch(handleError);
+  // Define the config we'll need for our Api request
+  var url = "https://graphql.anilist.co",
+    options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables,
+      }),
+    };
 
-function handleResponse(response) {
-  return response.json().then(function (json) {
-    return response.ok ? json : Promise.reject(json);
-  });
-}
-
-function handleData(data) {
-  console.log(data);
-}
-
-function handleError(error) {
-  alert('Error, check console');
-  console.error(error);
-}
-
-export default function Home() {
-  return (
-    <article className="prose lg:prose-xl">
-      <h1>Garlic bread with cheese: What the science tells us</h1>
-      <p>
-        For years parents have espoused the health benefits of eating garlic
-        bread with cheese to their children, with the food earning such an
-        iconic status in our culture that kids will often dress up as warm,
-        cheesy loaf for Halloween.
-      </p>
-      <p>
-        But a recent study shows that the celebrated appetizer may be linked to
-        a serises of rabies cases springing up around the country.
-      </p>
-    </article>
-  );
+  // Make the HTTP Api request
+  const data = await fetch(url, options)
+    .then(handleResponse)
+    .then(handleData)
+    .catch(handleError);
+  return {
+    props: { data: data },
+  };
 }

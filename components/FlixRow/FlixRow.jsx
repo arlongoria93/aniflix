@@ -12,6 +12,15 @@ import styles from "./FlixRow.module.css";
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
 const FlixRow = (props) => {
+  const { media } = props;
+  const test = media.map((anime) => {
+    return (
+      <SwiperSlide>
+        <FlixItem img={anime.coverImage.large} id={anime.id} />
+      </SwiperSlide>
+    );
+  });
+
   const next = `next${props.nav}`;
   const prev = `prev${props.nav}`;
   return (
@@ -76,39 +85,14 @@ const FlixRow = (props) => {
         }}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
-        </SwiperSlide>
+        {test}
       </Swiper>
     </>
   );
 };
-
+{
+  /* <SwiperSlide>
+          <FlixItem img={"/images/cover/cover.jpg"} id={"ANIME"} />
+        </SwiperSlide> */
+}
 export default FlixRow;
