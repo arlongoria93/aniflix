@@ -4,11 +4,11 @@ const sectionContainer = `${styles.bg} bg-mainBG`;
 const FeaturedRow = (prop) => {
   return (
     <section className={sectionContainer}>
-      <div className="relative h-full bg-mainBG ">
+      <div className="relative h-full bg-mainBG bg-blend-multiply">
         {" "}
         <div className="flex items-center text-center w-full h-full absolute  z-10">
           <div className=" grid grid-cols-1 lg:w-1/2 sm:w-full  m:w-full sm:p-4 md:p-6 lg:p-10">
-            <div className="">
+            <div>
               <h1 className="font-display text-white text-left  font-bold text-xl lg:text-2xl">
                 Vinland Saga
               </h1>
@@ -25,20 +25,20 @@ const FeaturedRow = (prop) => {
                 further from the truth.
               </p>
             </div>
-            <div className="">
+            <div>
               <button className="transition duration-300 bg-secondaryBG hover:bg-brightBG text-white w-1/5 mt-10 font-display p-1 cursor-pointer">
                 Learn More
               </button>
             </div>
           </div>
         </div>
-        <div className="z-0">
-          <div className="absolute h-full w-full bottom-0 left-0">
+        <div className="z-0 ">
+          <div className="absolute h-full w-full bg-blend-hue bottom-0 left-0">
             <Image
               src="/images/featured/featured.jpg"
               layout="fill"
               objectFit="cover"
-              className="opacity-40 z-0 mix-blend-lighten sm:object-center lg:object-top"
+              className=" opacity-30 z-0 sm:object-center lg:object-top"
             />
           </div>
         </div>
