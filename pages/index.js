@@ -2,16 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Layout from "../layout/layout";
- function Home() {
-
-  return <Layout data={}/>;
+function Home() {
+  return <Layout />;
 }
 
+export default Home;
 export async function getStaticProps(context) {
- const res = await fetch(`https://.../data`)
- const data = await res.json()
   return {
-    props: {
-    },
-  }
+    props: {},
+  };
 }
