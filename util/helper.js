@@ -11,3 +11,19 @@ export function handleData(data) {
 export function handleError(error) {
   console.error(error);
 }
+
+
+const apiOptions = (variables) => {
+   options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables,
+      }),
+    };
+}
+

@@ -5,10 +5,12 @@ import Layout from "../layout/layout";
 import { handleError, handleData, handleResponse } from "../util/helper";
 
 export default function Home(props) {
-  const { data } = props;
-  const media = data.data.Page.media;
+  const { mp,ra,top } = props;
+  const mediaMP = mp.data.Page.media;
+  const rencentlyAddedMedia = ra.data.Page.media;
+  const topOfYearMedia = top.data.Page.media;
 
-  return <Layout media={media} />;
+  return <Layout mpMedia={mediaMP} topMedia={topOfYearMedia} raMedia={ rencentlyAddedMedia} />;
 }
 export async function getStaticProps() {
   var query = `
@@ -89,18 +91,36 @@ export async function getStaticProps() {
   //   id: 15125
   // };
 
-  var variables = {
+  const mostPopularVariables = {
     page: 1,
     // "id": "116742",
     type: "ANIME",
-    // "seasonYear": 2021,
-    // "season": "SUMMER",
+    seasonYear: 2021,
+    season: "SUMMER",
+    // "trending":
+  };
+   const recentVariables = {
+    page: 1,
+    // "id": "116742",
+    type: "ANIME",
+    seasonYear: 2021,
+    season: "SUMMER",
+    // "trending":
+   };
+   const topOfYearVariables = {
+    page: 1,
+    // "id": "116742",
+    type: "ANIME",
+    seasonYear: 2022,
+    season: "SUMMER",
     // "trending":
   };
 
   // Define the config we'll need for our Api request
-  var url = "https://graphql.anilist.co",
-    options = {
+  var url = "https://graphql.anilist.co"
+  
+  const apiOptions = (variables) => {
+    let options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -110,13 +130,25 @@ export async function getStaticProps() {
         query: query,
         variables: variables,
       }),
+      
+    }
+    return options
+  }
+
+    // Make the HTTP Api request
+
+    //Rexently Added API Call
+    const responseRecent = await fetch(url, apiOptions(recentVariables));
+    const recent = await responseRecent.json();
+    //Popular API Call
+    const responsePopular = await fetch(url, apiOptions(mostPopularVariables));
+    const mostPopular = await responsePopular.json();
+    //Top 2021 API Call
+    const responseTopofYear = await fetch(url, apiOptions(topOfYearVariables));
+    const topOfYear = await responseTopofYear.json();
+
+    return {
+      props: { mp: mostPopular, ra: recent, top: topOfYear },
     };
+  }
 
-  // Make the HTTP Api request
-  const response = await fetch(url, options);
-  const data = await response.json();
-
-  return {
-    props: { data: data },
-  };
-}

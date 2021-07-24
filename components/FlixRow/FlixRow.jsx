@@ -12,7 +12,8 @@ import styles from "./FlixRow.module.css";
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
 const FlixRow = (props) => {
-  const { media } = props;
+  const { media, nav } = props;
+
   const test = media.map((anime) => {
     return (
       <SwiperSlide>
@@ -75,9 +76,9 @@ const FlixRow = (props) => {
       <Swiper
         breakpoints={{
           640: { slidesPerView: 3 },
-          1024: { slidesPerView: 6 },
+          1024: { slidesPerView: 8 },
         }}
-        spaceBetween={50}
+        spaceBetween={5}
         slidesPerView={3}
         navigation={{
           nextEl: `.next${props.nav}`,
