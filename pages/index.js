@@ -1,5 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
+
 
 import Layout from "../layout/layout";
 import {GetSeason, GetYear } from "../util/helper";
