@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
 import Layout from "../layout/layout";
-import { handleError, handleData, handleResponse, GetSeason, GetYear } from "../util/helper";
+import {GetSeason, GetYear } from "../util/helper";
 
 export default function Home(props) {
   const { mp,ra,top } = props;

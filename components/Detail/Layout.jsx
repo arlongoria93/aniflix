@@ -1,9 +1,9 @@
 import FlixItem from "../FlixItem/FlixItem";
-import Image from "next/image";
+
 
 // import AwesomeSlider from "react-awesome-slider";
 // import "react-awesome-slider/dist/styles.css";
-import styles from "./Layout.module.css";
+
 
 const Layout = (props) => {
   return (

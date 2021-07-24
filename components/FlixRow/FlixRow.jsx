@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -7,7 +7,7 @@ import "swiper/components/navigation/navigation.min.css";
 
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import FlixItem from "../FlixItem/FlixItem";
-import styles from "./FlixRow.module.css";
+
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
