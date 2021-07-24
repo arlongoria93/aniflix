@@ -1,7 +1,16 @@
 import Image from "next/image";
 import styles from "./FeaturedRow.module.css";
 const sectionContainer = `${styles.bg} bg-mainBG`;
-const FeaturedRow = (prop) => {
+const FeaturedRow = () => {
+  const s = `Young Thorfinn grew up listening to the stories of old sailors
+                that had traveled the ocean and reached the place of legend,
+                Vinland. It's said to be warm and fertile, a place where there
+                would be no need for fighting—not at all like the frozen village
+                in Iceland where he was born, and certainly not like his current
+                life as a mercenary. War is his home now. Though his father once
+                told him, "You have no enemies, nobody does. There is nobody who
+                it's okay to hurt," as he grew, Thorfinn knew that nothing was
+                further from the truth.`
   return (
     <section className={sectionContainer}>
       <div className="relative h-full bg-mainBG bg-blend-multiply">
@@ -14,15 +23,7 @@ const FeaturedRow = (prop) => {
               </h1>
               <br className="border border-black w-full " />
               <p className="text-sm leading-8 text-white font-display lg:text-left lg:text-lg lg:leading-10">
-                Young Thorfinn grew up listening to the stories of old sailors
-                that had traveled the ocean and reached the place of legend,
-                Vinland. It's said to be warm and fertile, a place where there
-                would be no need for fighting—not at all like the frozen village
-                in Iceland where he was born, and certainly not like his current
-                life as a mercenary. War is his home now. Though his father once
-                told him, "You have no enemies, nobody does. There is nobody who
-                it's okay to hurt," as he grew, Thorfinn knew that nothing was
-                further from the truth.
+               {s}
               </p>
             </div>
             <div>
