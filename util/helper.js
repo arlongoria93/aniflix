@@ -12,18 +12,24 @@ export function handleError(error) {
   console.error(error);
 }
 
+export function GetSeason() {
+  let d = new Date();
+  let month = d.getMonth();
 
-const apiOptions = (variables) => {
-   options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: variables,
-      }),
-    };
+  if (month >= 0 && month <= 3)
+    return "WINTER";
+
+  if (month >= 4 && month <= 6)
+    return "SPRING";
+
+  if (month >= 7 && month <= 9)
+    return "SUMMER";
+
+  if (month >= 10 && month <= 12)
+    return "FALL";
 }
 
+export function GetYear() {
+  let d = new Date();
+  return d.getFullYear();
+}

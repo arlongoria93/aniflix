@@ -2,14 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Layout from "../layout/layout";
-import { handleError, handleData, handleResponse } from "../util/helper";
+import { handleError, handleData, handleResponse, GetSeason, GetYear } from "../util/helper";
 
 export default function Home(props) {
   const { mp,ra,top } = props;
   const mediaMP = mp.data.Page.media;
   const rencentlyAddedMedia = ra.data.Page.media;
   const topOfYearMedia = top.data.Page.media;
-
+  
   return <Layout mpMedia={mediaMP} topMedia={topOfYearMedia} raMedia={ rencentlyAddedMedia} />;
 }
 export async function getStaticProps() {
@@ -93,27 +93,18 @@ export async function getStaticProps() {
 
   const mostPopularVariables = {
     page: 1,
-    // "id": "116742",
     type: "ANIME",
-    seasonYear: 2021,
-    season: "SUMMER",
-    // "trending":
   };
    const recentVariables = {
     page: 1,
-    // "id": "116742",
     type: "ANIME",
-    seasonYear: 2021,
-    season: "SUMMER",
-    // "trending":
+    seasonYear: GetYear(),
+    season: GetSeason(),
    };
    const topOfYearVariables = {
     page: 1,
-    // "id": "116742",
     type: "ANIME",
-    seasonYear: 2022,
-    season: "SUMMER",
-    // "trending":
+    seasonYear: GetYear()
   };
 
   // Define the config we'll need for our Api request
