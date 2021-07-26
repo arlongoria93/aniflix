@@ -2,6 +2,11 @@ import Image from "next/image";
 import styles from "./FeaturedRow.module.css";
 const sectionContainer = `bg-mainBG overflow-hidden`;
 const FeaturedRow = () => {
+  const s = `Thorfinn is son to one of the Vikings' greatest warriors, but when
+            his father is killed in battle by the mercenary leader Askeladd, he
+            swears to have his revenge. Thorfinn joins Askeladd's band in order
+            to challenge him to a duel, and ends up caught in the middle of a
+            war for the crown of England.`;
   return (
     <section className={sectionContainer}>
       <div className="grid grid-cols-1">
@@ -14,13 +19,7 @@ const FeaturedRow = () => {
           />
         </div>
         <div className="font-display overscroll-auto text-white">
-          <p className="iphone:text-sm  p-2">
-            Thorfinn is son to one of the Vikings' greatest warriors, but when
-            his father is killed in battle by the mercenary leader Askeladd, he
-            swears to have his revenge. Thorfinn joins Askeladd's band in order
-            to challenge him to a duel, and ends up caught in the middle of a
-            war for the crown of England.
-          </p>
+          <p className="iphone:text-sm  p-2">{s}</p>
         </div>
       </div>
     </section>
