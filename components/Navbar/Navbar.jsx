@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const profileHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const profieStyles = `absolute flex flex-col bg-lighterBG rounded divide-y-2 right-0`;
+
   return (
     <nav className="bg-mainBG text-white">
       <div className="flex justify-between py-2 px-4">
@@ -38,8 +48,8 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="cursor-pointer">
-          <div className="flex items-center">
+        <div className="cursor-pointer relative">
+          <div className="flex items-center" onClick={profileHandler}>
             <div className="flex  transition duration-500 border border-lighterBG hover:border-secondaryBG rounded-full">
               <Image
                 src="/images/avatars/female.svg"
@@ -50,6 +60,14 @@ const Navbar = () => {
               />
             </div>
           </div>
+          {isOpen ? (
+            <div className={profieStyles}>
+              <h1 className="p-4 hover:bg-mainBG ">Profile</h1>
+              <h1 className="p-4 hover:bg-mainBG">Favorites</h1>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </nav>
