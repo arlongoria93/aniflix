@@ -75,11 +75,23 @@ const FlixRow = (props) => {
 
       <Swiper
         slidesPerView={3}
+        spaceBetween={10}
         navigation={{
           nextEl: `.next${props.nav}`,
           prevEl: `.prev${props.nav}`,
         }}
-        className="mySwiper"
+        className="w-screen  lg:hidden"
+      >
+        {test}
+      </Swiper>
+      <Swiper
+        slidesPerView={9}
+        spaceBetween={10}
+        navigation={{
+          nextEl: `.next${props.nav}`,
+          prevEl: `.prev${props.nav}`,
+        }}
+        className="w-screen iphone:hidden lg:block"
       >
         {test}
       </Swiper>
