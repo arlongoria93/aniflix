@@ -27,7 +27,7 @@ const FeaturedRow = () => {
           backgroundImage: `url(${mobilePhone})`,
         }}
       />
-      <div className="iphone:text-white iphone:w-screen p-4 flex flex-col space-y-4">
+      <div className="iphone:text-white  p-4 flex flex-col space-y-4">
         <h1 className="font-display text-2xl">Vinland Saga</h1>
         <div className="font-display text-lg">Description</div>
         <p className="lg:w-1/2">{s}</p>{" "}
