@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
+import styles from "./FlixRow.module.css";
 
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import FlixItem from "../FlixItem/FlixItem";
-
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -74,11 +74,6 @@ const FlixRow = (props) => {
       </div>
 
       <Swiper
-        breakpoints={{
-          640: { slidesPerView: 3 },
-          1024: { slidesPerView: 8 },
-        }}
-        spaceBetween={5}
         slidesPerView={3}
         navigation={{
           nextEl: `.next${props.nav}`,
