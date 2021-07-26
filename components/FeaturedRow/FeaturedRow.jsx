@@ -4,14 +4,8 @@ const sectionContainer = `${styles.bg} bg-mainBG grid iphone:gird-cols-1 p-4 gap
 const FeaturedRow = () => {
   return (
     <section className={sectionContainer}>
-      <div>
-        <Image
-          src="/images/cover/cover.jpg"
-          objectFit="contain"
-          layout="responsive"
-          width="200"
-          height="100"
-        />
+      <div className="w-1/2 justify-self-center">
+        <img src="/images/cover/cover.jpg" className="object-contain" />
       </div>
       <div className="  overflow-y-auto font-display text-white">
         <p className="iphone:text-sm ">
