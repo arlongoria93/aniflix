@@ -1,29 +1,26 @@
 import Image from "next/image";
 import styles from "./FeaturedRow.module.css";
-const sectionContainer = `${styles.bg} bg-mainBG overflow-hidden`;
+const sectionContainer = `bg-mainBG overflow-hidden`;
 const FeaturedRow = () => {
-  const s = `Young Thorfinn grew up listening to the stories of old sailors
-                that had traveled the ocean and reached the place of legend,
-                Vinland. It's said to be warm and fertile, a place where there
-                would be no need for fighting—not at all like the frozen village
-                in Iceland where he was born, and certainly not like his current
-                life as a mercenary. War is his home now. Though his father once
-                told him, "You have no enemies, nobody does. There is nobody who
-                it's okay to hurt," as he grew, Thorfinn knew that nothing was
-                further from the truth.`;
   return (
     <section className={sectionContainer}>
       <div className="grid grid-cols-1">
-        <div className="w-1/2 justify-self-center">
+        <h1 className="justify-self-center text-white text-xl">Vinland Saga</h1>
+        <div className=" relative justify-self-center h-72 w-screen">
           <Image
             src="/images/cover/cover.jpg"
-            className="object-contain"
-            width={460}
-            height={650}
+            layout="fill"
+            objectFit="contain"
           />
         </div>
-        <div className="font-display overflow-y-auto text-white">
-          <p className="iphone:text-sm overflow-y-auto">{s}</p>
+        <div className="font-display overscroll-auto text-white">
+          <p className="iphone:text-sm  p-2">
+            Thorfinn is son to one of the Vikings' greatest warriors, but when
+            his father is killed in battle by the mercenary leader Askeladd, he
+            swears to have his revenge. Thorfinn joins Askeladd's band in order
+            to challenge him to a duel, and ends up caught in the middle of a
+            war for the crown of England.
+          </p>
         </div>
       </div>
     </section>
