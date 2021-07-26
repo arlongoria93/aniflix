@@ -13,7 +13,7 @@ const Layout = (props) => {
           <FeaturedRow image="/images/featured/featured.png" />
         </div>
       </div>
-      <div className="grid grid-rows-3 grid-cols-1 divide-y divide-fuchsia-300">
+      <div className="flex flex-col divide-y divide-fuchsia-300">
         <div className="p-4">
           <FlixRow nav={"mp"} title={"Most Popular"} media={mpMedia} />
         </div>
