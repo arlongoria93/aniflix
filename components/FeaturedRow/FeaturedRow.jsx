@@ -4,7 +4,7 @@ const sectionContainer = `${styles.bg} overflow-hidden bg-mainBG grid iphone:gir
 const FeaturedRow = () => {
   return (
     <section className={sectionContainer}>
-      <div className="w-1/2 justify-self-center flex">
+      {/* <div className="w-1/2 justify-self-center flex">
         <Image
           src="/images/cover/cover.jpg"
           className="object-contain"
@@ -14,7 +14,7 @@ const FeaturedRow = () => {
       </div>
       <div className="  overflow-y-auto font-display text-white">
         <p className="iphone:text-sm"></p>
-      </div>
+      </div> */}
     </section>
   );
 };
