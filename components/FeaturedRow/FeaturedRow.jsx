@@ -1,8 +1,7 @@
-import Image from "next/image";
-import { Fragment } from "react";
 import styles from "./FeaturedRow.module.css";
-const sectionContainer = `${styles.test} iphone:hidden`;
-const sectionContainerMobile = `${styles.test2}  `;
+import Link from "next/link";
+const sectionContainer = `${styles.test} iphone:hidden filter drop-shadow `;
+const sectionContainerMobile = `${styles.test2} `;
 
 const FeaturedRow = () => {
   const url = "/images/banner/banner.jpg";
@@ -14,7 +13,8 @@ const FeaturedRow = () => {
             to challenge him to a duel, and ends up caught in the middle of a
             war for the crown of England.`;
   return (
-    <section className="">
+    <section className="bg-gradient-to-t from-mainBG via-lighterBG to-mainBG">
+      <div className="mt-2" />
       <section
         className={sectionContainer}
         style={{
@@ -27,26 +27,21 @@ const FeaturedRow = () => {
           backgroundImage: `url(${mobilePhone})`,
         }}
       />
-      <div className="iphone:text-white iphone:w-screen p-4">
+      <div className="iphone:text-white iphone:w-screen p-4 flex flex-col space-y-4">
         <h1 className="font-display text-2xl">Vinland Saga</h1>
         <div className="font-display text-lg">Description</div>
-        <p className="lg:w-1/2">{s}</p>
+        <p className="lg:w-1/2">{s}</p>{" "}
+        <Link href="/anime/f">
+          <button
+            type="button"
+            className=" iphone:self-center lg:self-start items-center border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-secondaryBG hover:bg-lighterBG w-28 h-8"
+          >
+            Learn More
+          </button>
+        </Link>
       </div>{" "}
       <hr className="w-1/2 text-center mx-auto " />
     </section>
   );
 };
 export default FeaturedRow;
-//  <div className="grid grid-cols-1">
-//         <h1 className="justify-self-center text-white text-xl">Vinland Saga</h1>
-//         <div className=" relative justify-self-center h-72 w-screen">
-//           <Image
-//             src="/images/cover/cover.jpg"
-//             layout="fill"
-//             objectFit="contain"
-//           />
-//         </div>
-//         <div className="font-display overscroll-auto text-white">
-//           <p className="iphone:text-sm  p-2">{s}</p>
-//         </div>
-//       </div>
