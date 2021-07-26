@@ -5,11 +5,20 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const profileHandler = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const profieStyles = `absolute flex flex-col bg-lighterBG rounded divide-y-2 right-0`;
+  let test = (
+    <div className="absolute  flex flex-col bg-lighterBG rounded divide-y-2 right-0 z-10 shadow-lg mt-2">
+      <a href="/">
+        <h1 className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display  transition delay-100 duration-200 hover:text-brightBG ">
+          Picture
+        </h1>
+      </a>
+      <a href="/favorites">
+        <h1 className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG">
+          Favorites
+        </h1>
+      </a>
+    </div>
+  );
 
   return (
     <nav className="bg-mainBG text-white">
@@ -49,7 +58,7 @@ const Navbar = () => {
         </div>
 
         <div className="cursor-pointer relative">
-          <div className="flex items-center" onClick={profileHandler}>
+          <div className="flex items-center" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex  transition duration-500 border border-lighterBG hover:border-secondaryBG rounded-full">
               <Image
                 src="/images/avatars/female.svg"
@@ -60,14 +69,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          {isOpen ? (
-            <div className={profieStyles}>
-              <h1 className="p-4 hover:bg-mainBG ">Profile</h1>
-              <h1 className="p-4 hover:bg-mainBG">Favorites</h1>
-            </div>
-          ) : (
-            ""
-          )}
+          {isOpen && test}
         </div>
       </div>
     </nav>
