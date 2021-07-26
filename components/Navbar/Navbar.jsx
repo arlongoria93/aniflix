@@ -7,16 +7,17 @@ const Navbar = () => {
 
   let test = (
     <div className="absolute  flex flex-col bg-lighterBG rounded divide-y-2 right-0 z-10 shadow-lg mt-2">
-      <a href="/">
-        <h1 className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display  transition delay-100 duration-200 hover:text-brightBG ">
+      <Link href="/" passHref={true}>
+        <button className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display  transition duration-300 rounded">
           Picture
-        </h1>
-      </a>
-      <a href="/favorites">
-        <h1 className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG">
+        </button>
+      </Link>
+
+      <Link href="/favorites" passHref={true}>
+        <button className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG rounded">
           Favorites
-        </h1>
-      </a>
+        </button>
+      </Link>
     </div>
   );
 
