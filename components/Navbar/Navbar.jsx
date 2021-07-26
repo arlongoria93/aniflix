@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="flex justify-between py-2 px-4">
         <div className="flex items-center">
           <Link href="/">
-            <div className="sm:hidden md:block cursor-pointer mr-4">
+            <div className="sm:hidden iphone:hidden md:block cursor-pointer mr-4">
               <h1 className="font-display font-bold text-xl">ANIFLEX</h1>
             </div>
           </Link>
