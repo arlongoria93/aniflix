@@ -1,3 +1,29 @@
-.bg {
-  height: 60vh;
+.test {
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.test2 {
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 200px;
+}
+@media (min-width: 1280px) {
+  .test {
+    display: block;
+  }
+  .test2 {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .test {
+    display: block;
+  }
+  .test2 {
+    display: none;
+  }
 }
