@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./FeaturedRow.module.css";
 const sectionContainer = `${styles.bg} bg-mainBG grid iphone:gird-cols-1 p-4 gap-4`;
 const FeaturedRow = () => {
