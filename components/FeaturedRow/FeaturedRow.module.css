@@ -3,12 +3,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
+  opacity: 75%;
 }
 .test2 {
   background-position: 50% 35%;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 200px;
+  opacity: 75%;
+  height: 500px;
 }
 @media (min-width: 1280px) {
   .test {

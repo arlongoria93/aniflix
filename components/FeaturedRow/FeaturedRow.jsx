@@ -14,7 +14,7 @@ const FeaturedRow = () => {
             to challenge him to a duel, and ends up caught in the middle of a
             war for the crown of England.`;
   return (
-    <Fragment>
+    <section className="">
       <section
         className={sectionContainer}
         style={{
@@ -27,7 +27,13 @@ const FeaturedRow = () => {
           backgroundImage: `url(${mobilePhone})`,
         }}
       />
-    </Fragment>
+      <div className="iphone:text-white iphone:w-screen p-4">
+        <h1 className="font-display text-2xl">Vinland Saga</h1>
+        <div className="font-display text-lg">Description</div>
+        <p className="lg:w-1/2">{s}</p>
+      </div>{" "}
+      <hr className="w-1/2 text-center mx-auto " />
+    </section>
   );
 };
 export default FeaturedRow;
