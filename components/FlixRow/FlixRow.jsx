@@ -9,14 +9,18 @@ const FlixRow = (props) => {
   const { media, nav } = props;
 
   const test = media.map((anime) => {
-    return <FlixItem img={anime.coverImage.large} id={anime.id} />;
+    return (
+      <FlixItem img={anime.coverImage.large} id={anime.id} key={anime.id} />
+    );
   });
 
   return (
     <div className="flex flex-col">
       <div>
         <div>
-          <h1 className="font-display text-white">{props.title}</h1>
+          <h1 className="font-display text-white lg:text-2xl iphone:text-xl">
+            {props.title}
+          </h1>
         </div>
         <div></div>
       </div>
