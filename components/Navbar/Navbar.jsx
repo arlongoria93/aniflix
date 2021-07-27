@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <nav className="bg-mainBG text-white">
-      <div className="flex justify-between py-2 px-4">
+      <div className="flex justify-between py-2 px-4 h-24">
         <div className="flex items-center space-x-4">
           <Link href="/">
             <div className="sm:hidden iphone:hidden md:block cursor-pointer mr-4">
-              <h1 className="font-display font-bold text-xl">ANIFLEX</h1>
+              <h1 className="font-display font-bold text-2xl">ANIFLEX</h1>
             </div>
           </Link>
           <div className=" text-center cursor-pointer lg:hidden">
@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
           <div className=" text-center cursor-pointer">
             <Link href="/favorites">
-              <h1 className="font-display text-sm ">FAVORITES</h1>
+              <h1 className="font-display text-xl ">FAVORITES</h1>
             </Link>
           </div>
         </div>
