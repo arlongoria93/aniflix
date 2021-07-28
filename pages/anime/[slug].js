@@ -96,7 +96,10 @@ const Details = (props) => {
       <div className="grid iphone:grid-cols-3 lg:justify-center gap-4 lg:flex lg:flex-row lg:space-x-4 lg:items-cemter lg:w-full p-10 lg:p-24 ">
         {Media.recommendations.nodes.map((recommendations) => {
           return (
-            <div className="justify-self-center lg:self-center">
+            <div
+              className="justify-self-center lg:self-center"
+              key={recommendations.mediaRecommendation.id}
+            >
               <p className="text-center text-white font-display ">
                 {recommendations.mediaRecommendation.title.userPreferred
                   .length > 25
