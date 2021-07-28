@@ -24,10 +24,10 @@ const Navbar = () => {
   return (
     <nav className="bg-mainBG text-white">
       <div className="flex justify-between py-2 px-4 h-24">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center">
           <Link href="/">
             <div className="sm:hidden iphone:hidden md:block cursor-pointer mr-4">
-              <h1 className="font-display font-bold text-2xl">ANIFLEX</h1>
+              <h1 className="font-display font-bold text-2xl ">ANIFLEX</h1>
             </div>
           </Link>
           <div className=" text-center cursor-pointer md:hidden sm:hidden lg:hidden">
@@ -44,13 +44,15 @@ const Navbar = () => {
               </a>
             </Link>
           </div>
-          <div className=" text-center cursor-pointer iphone:mt-2 lg:mt-0">
+          <div className=" text-center cursor-pointer iphone:mt-2 sm:mt-0 mt:0  lg:mt-0 ">
             <Link href="/favorites">
-              <h1 className="font-display text-xl">FAVORITES</h1>
+              <h1 className="font-display text-xl  iphone:text-lg iphone:font-bold md:font-normal sm:text-xl iphone:p-2">
+                FAVORITES
+              </h1>
             </Link>
           </div>
         </div>
-        <div className="flex items-center w-2/5">
+        <div className="flex items-center w-2/5 sm:hidden iphone:hidden">
           <input
             type="text"
             className="w-full  transition duration-500 border border-lighterBG text-secondaryBG px-1 py-1 rounded-lg bg-mainBG font-display  focus:outline-none focus:ring-2 focus:ring-secondaryBG focus:border-transparent "
@@ -58,20 +60,27 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="cursor-pointer relative">
+        <div className="cursor-pointer relative self-center">
           <div className="flex items-center" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex  transition duration-500 border border-lighterBG hover:border-secondaryBG rounded-full">
               <Image
                 src="/images/avatars/female.svg"
                 objectFit="cover"
-                width={35}
-                height={35}
+                width={40}
+                height={40}
                 objectPosition="center"
               />
             </div>
           </div>
           {isOpen && test}
         </div>
+      </div>
+      <div className="block w-full p-4  md:hidden lg:hidden items-center">
+        <input
+          type="text"
+          className="w-full  transition duration-500 border border-lighterBG text-secondaryBG px-1 py-1 rounded-lg bg-mainBG font-display  focus:outline-none focus:ring-2 focus:ring-secondaryBG focus:border-transparent "
+          placeholder=" search"
+        />
       </div>
     </nav>
   );

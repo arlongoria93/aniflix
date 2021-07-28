@@ -33,12 +33,12 @@ const Details = (props) => {
             src={Media.coverImage.extraLarge}
             width={460}
             height={690}
-            className="rounded-lg shadow-2xl "
+            className="rounded-lg shadow-2xl tr iphone:scale-75"
           />
         </div>
 
         {/* Title and description */}
-        <div className="flex flex-col lg:block w-full iphone:mt-10 lg:mt-0">
+        <div className="flex flex-col lg:block w-full iphone:mt-4 lg:mt-0">
           <h1 className="font-display text-2xl  text-white lg:text-left iphone:text-center">
             {Media.title.english}
           </h1>
@@ -58,7 +58,7 @@ const Details = (props) => {
             </div>
           </div>
 
-          <p className="font-display text-xl text-white text-left w-3/4 lg:mx-0 iphone:mx-auto mt-12 leading-8">
+          <p className="font-display text-xl text-white text-left w-3/4 lg:mx-0 iphone:mx-auto mt-12 leading-8 iphone:text-base iphone:w-full">
             {description}
           </p>
           {/* Main Characters */}
@@ -93,14 +93,11 @@ const Details = (props) => {
           Recommended Anime
         </h1>
       </div>
-      <div className="grid iphone:grid-cols-3 lg:justify-center gap-4 lg:flex lg:flex-row lg:space-x-4 lg:items-cemter lg:w-full p-10 lg:p-24 ">
+      <div className="grid iphone:grid-cols-2 justify-items-center place-content-center place-items-center lg:justify-center gap-4 lg:flex lg:flex-row lg:space-x-4 lg:items-cemter lg:w-full p-10 lg:p-24 ">
         {Media.recommendations.nodes.map((recommendations) => {
           return (
-            <div
-              className="justify-self-center lg:self-center"
-              key={recommendations.mediaRecommendation.id}
-            >
-              <p className="text-center text-white font-display ">
+            <div className="" key={recommendations.mediaRecommendation.id}>
+              <p className="text-center text-white font-display iphone:hidden">
                 {recommendations.mediaRecommendation.title.userPreferred
                   .length > 25
                   ? recommendations.mediaRecommendation.title.userPreferred.slice(
