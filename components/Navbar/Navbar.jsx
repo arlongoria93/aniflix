@@ -30,7 +30,7 @@ const Navbar = () => {
               <h1 className="font-display font-bold text-2xl">ANIFLEX</h1>
             </div>
           </Link>
-          <div className=" text-center cursor-pointer lg:hidden">
+          <div className=" text-center cursor-pointer md:hidden sm:hidden lg:hidden">
             <Link href="/">
               <a>
                 <svg

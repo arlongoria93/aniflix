@@ -13,7 +13,7 @@ const FeaturedRow = () => {
             to challenge him to a duel, and ends up caught in the middle of a
             war for the crown of England.`;
   return (
-    <section className="bg-gradient-to-t from-mainBG via-lighterBG to-mainBG">
+    <section className="p-8">
       <div className="mt-2" />
       <section
         className={sectionContainer}
