@@ -15,7 +15,10 @@ const FlixRow = (props) => {
 
   const test = media.map((anime) => {
     return (
-      <SwiperSlide key={anime.id}>
+      <SwiperSlide
+        key={anime.id}
+        className="rounded  transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110"
+      >
         <FlixItem img={anime.coverImage.large} id={anime.id} />
       </SwiperSlide>
     );

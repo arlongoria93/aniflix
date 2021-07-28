@@ -1,18 +1,29 @@
-
-
 import Layout from "../layout/layout";
-import {GetSeason, GetYear } from "../util/helper";
+import { Fragment } from "react";
+import { GetSeason, GetYear } from "../util/helper";
+import Head from "next/head";
 
 export default function Home(props) {
-  const { mp,ra,top } = props;
+  const { mp, ra, top } = props;
   const mediaMP = mp.data.Page.media;
   const rencentlyAddedMedia = ra.data.Page.media;
   const topOfYearMedia = top.data.Page.media;
-  
-  return <Layout mpMedia={mediaMP} topMedia={topOfYearMedia} raMedia={ rencentlyAddedMedia} />;
+
+  return (
+    <Fragment>
+      <Head>
+        <title>ANIFLIX</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Layout
+        mpMedia={mediaMP}
+        topMedia={topOfYearMedia}
+        raMedia={rencentlyAddedMedia}
+      />
+    </Fragment>
+  );
 }
 export async function getStaticProps() {
-
   var query = `
   query($page: Int = 1 $id: Int $type: MediaType $isAdult: Boolean = false $search: String $format: [MediaFormat]$status: MediaStatus $countryOfOrigin: CountryCode $source: MediaSource $season: MediaSeason $seasonYear: Int $year: String $onList: Boolean $yearLesser: FuzzyDateInt $yearGreater: FuzzyDateInt $episodeLesser: Int $episodeGreater: Int $durationLesser: Int $durationGreater: Int $chapterLesser: Int $chapterGreater: Int $volumeLesser: Int $volumeGreater: Int $licensedBy: [String]$genres: [String]$excludedGenres: [String]$tags: [String]$excludedTags: [String]$minimumTagRank: Int $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC])
 {
@@ -95,21 +106,21 @@ export async function getStaticProps() {
     page: 1,
     type: "ANIME",
   };
-   const recentVariables = {
+  const recentVariables = {
     page: 1,
     type: "ANIME",
     seasonYear: GetYear(),
     season: GetSeason(),
-   };
-   const topOfYearVariables = {
+  };
+  const topOfYearVariables = {
     page: 1,
     type: "ANIME",
-    seasonYear: GetYear()
+    seasonYear: GetYear(),
   };
 
   // Define the config we'll need for our Api request
-  var url = "https://graphql.anilist.co"
-  
+  var url = "https://graphql.anilist.co";
+
   const apiOptions = (variables) => {
     let options = {
       method: "POST",
@@ -121,25 +132,23 @@ export async function getStaticProps() {
         query: query,
         variables: variables,
       }),
-      
-    }
-    return options
-  }
-
-    // Make the HTTP Api request
-
-    //Rexently Added API Call
-    const responseRecent = await fetch(url, apiOptions(recentVariables));
-    const recent = await responseRecent.json();
-    //Popular API Call
-    const responsePopular = await fetch(url, apiOptions(mostPopularVariables));
-    const mostPopular = await responsePopular.json();
-    //Top 2021 API Call
-    const responseTopofYear = await fetch(url, apiOptions(topOfYearVariables));
-    const topOfYear = await responseTopofYear.json();
-
-    return {
-      props: { mp: mostPopular, ra: recent, top: topOfYear },
     };
-  }
+    return options;
+  };
 
+  // Make the HTTP Api request
+
+  //Rexently Added API Call
+  const responseRecent = await fetch(url, apiOptions(recentVariables));
+  const recent = await responseRecent.json();
+  //Popular API Call
+  const responsePopular = await fetch(url, apiOptions(mostPopularVariables));
+  const mostPopular = await responsePopular.json();
+  //Top 2021 API Call
+  const responseTopofYear = await fetch(url, apiOptions(topOfYearVariables));
+  const topOfYear = await responseTopofYear.json();
+
+  return {
+    props: { mp: mostPopular, ra: recent, top: topOfYear },
+  };
+}
