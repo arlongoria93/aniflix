@@ -5,21 +5,21 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      'iphone': '320px',
+      iphone: "320px",
       // => @media (min-width: 320px) { ... }
-      'sm': '640px',
+      sm: "640px",
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      xl: "1280px",
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
+      "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
     colors: {
@@ -31,7 +31,7 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
-      mainBG: "#262626",
+      mainBG: "#202124",
       lighterBG: "#38393C",
       brightBG: "#C8714E",
       secondaryBG: "#D1977F",

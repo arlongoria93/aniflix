@@ -15,9 +15,8 @@ const Details = (props) => {
   );
   console.log(Media);
 
-  let banner = data.data.Media.bannerImage;
   return (
-    <div className="">
+    <div className="bg-mainBG h-screen">
       <Head>
         <title>{slug}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

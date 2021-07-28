@@ -35,7 +35,7 @@ const Navbar = () => {
               <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
+                  className="h-8 w-8"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -44,9 +44,9 @@ const Navbar = () => {
               </a>
             </Link>
           </div>
-          <div className=" text-center cursor-pointer">
+          <div className=" text-center cursor-pointer iphone:mt-2 lg:mt-0">
             <Link href="/favorites">
-              <h1 className="font-display text-xl ">FAVORITES</h1>
+              <h1 className="font-display text-xl">FAVORITES</h1>
             </Link>
           </div>
         </div>
