@@ -18,7 +18,7 @@ const Details = (props) => {
     .filter((rank) => rank.year === null && rank.type === "POPULAR")
     .map((rank) => rank.rank);
 
-  // console.log(Media);
+  console.log(Media);
 
   return (
     <div className="bg-mainBG ">
@@ -69,7 +69,7 @@ const Details = (props) => {
             <div className="flex md:flex-col lg:flex-row iphone:flex-col iphone:space-y-2 lg:space-x-4 items-center">
               {Media.characterPreview.edges.map((characters) => {
                 return (
-                  <div>
+                  <div key={characters.id}>
                     <p className="font-display text-white text-center">
                       {characters.node.name.userPreferred}
                     </p>
