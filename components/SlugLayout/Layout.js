@@ -23,10 +23,10 @@ const LayoutLeft = (props) => {
           {Media.recommendations.nodes.map((recommendations) => {
             return (
               <div
-                className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center "
+                className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center sm:grid-cols-1"
                 key={recommendations.id}
               >
-                <div className="">
+                <div className="iphone:grid">
                   <Image
                     width={200}
                     height={130}

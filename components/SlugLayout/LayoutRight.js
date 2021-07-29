@@ -22,15 +22,15 @@ const LayoutRight = (props) => {
       <div className="">
         <div>
           <h1 className="text-center text-secondaryBG font-display text-2xl mb-2">
-            Recommended Anime
+            Main Characters
           </h1>
           {Media.characterPreview.edges.map((characters) => {
             return (
               <div
-                className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center "
+                className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center sm:grid-cols-1"
                 key={characters.id}
               >
-                <div className="">
+                <div className="iphone:grid">
                   <Image
                     width={200}
                     height={130}
