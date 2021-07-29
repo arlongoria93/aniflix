@@ -1,7 +1,6 @@
 import Image from "next/image";
 const LayoutRight = (props) => {
   const { Media } = props;
-  console.log(Media);
   const description = Media.description.replace(
     /(<|&lt;)br\s*\/*(>|&gt;)/g,
     " "

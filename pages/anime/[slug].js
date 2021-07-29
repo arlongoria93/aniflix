@@ -20,8 +20,6 @@ const Details = (props) => {
   //   .filter((rank) => rank.year === null && rank.type === "POPULAR")
   //   .map((rank) => rank.rank);
 
-  console.log(Media);
-
   return (
     <div className="bg-mainBG">
       <Head>

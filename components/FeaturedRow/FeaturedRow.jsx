@@ -11,7 +11,6 @@ const FeaturedRow = (props) => {
   const randomAnime = data[random];
   const linkUrl = `/anime/${randomAnime.id}`;
   const url = `${randomAnime.bannerImage}`;
-  console.log(data[random]);
   const mobilePhone = `${randomAnime.coverImage.extraLarge}`;
 
   const description = randomAnime.description.replace(
