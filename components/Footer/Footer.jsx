@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <nav
-      className="bg-mainBG text-white
+      className="bg-lighterBG p-8 text-white
     "
     >
       <div className="flex justify-center py-2 px-4">
