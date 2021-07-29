@@ -10,7 +10,7 @@ const Layout = (props) => {
       <Navbar />
       <div className="grid grid-cols-1 grid-rows-1 mt-5 ">
         <div className="row-span-3">
-          <FeaturedRow image="/images/featured/featured.png" />
+          <FeaturedRow data={mpMedia} />
         </div>
       </div>
       <div className="flex flex-col divide-y divide-fuchsia-300">
