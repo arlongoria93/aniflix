@@ -27,7 +27,10 @@ const LayoutRight = (props) => {
           </h1>
           {Media.characterPreview.edges.map((characters) => {
             return (
-              <div className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center ">
+              <div
+                className="grid  iphone:grid-cols-1 md:grid-cols-3 p-4 gap-2 rounded content-center "
+                key={characters.id}
+              >
                 <div className="">
                   <Image
                     width={200}
