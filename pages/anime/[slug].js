@@ -1,24 +1,12 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Head from "next/head";
 import Footer from "../../components/Footer/Footer";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import LayoutLeft from "../../components/SlugLayout/Layout";
 import LayoutRight from "../../components/SlugLayout/LayoutRight";
 
 const Details = (props) => {
-  const router = useRouter();
   const { data } = props;
-  const { slug } = router.query;
   const { Media } = data.data;
-  // const description = Media.description.replace(
-  //   /(<|&lt;)br\s*\/*(>|&gt;)/g,
-  //   " "
-  // );
-
-  // let rank = Media.rankings
-  //   .filter((rank) => rank.year === null && rank.type === "POPULAR")
-  //   .map((rank) => rank.rank);
 
   return (
     <div className="bg-mainBG">
