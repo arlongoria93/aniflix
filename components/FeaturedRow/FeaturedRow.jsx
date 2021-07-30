@@ -6,8 +6,7 @@ const sectionContainerMobile = `${styles.test2} `;
 const FeaturedRow = (props) => {
   const { data } = props;
 
-  const bannerImages = data.map((anime) => anime.bannerImage);
-  const random = Math.floor(Math.random() * bannerImages.length);
+  const random = Math.floor(Math.random() * data.length);
   const randomAnime = data[random];
   const linkUrl = `/anime/${randomAnime.id}`;
   const url = `${randomAnime.bannerImage}`;

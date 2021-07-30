@@ -1,7 +1,6 @@
 import Image from "next/image";
 const LayoutLeft = (props) => {
   const { Media } = props;
-
   return (
     <div className="grid grid-cols-1 grid-rows-2 gap-4 p-4">
       <div className=" flex  flex-wrap justify-center">
