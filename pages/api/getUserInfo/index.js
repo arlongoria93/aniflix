@@ -1,16 +1,14 @@
-import { connectToDatabase } from "../../../lib/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 import { getSession } from "next-auth/client";
 
-
-
 export default async function handler(req, res) {
-    const { client } = await connectToDatabase();
-    const { user } = await getSession({ req })
+  const { client } = await connectToDatabase();
+  const { user } = await getSession({ req });
 
-    const db = client.db("Aniflix");
-    const col = db.collection("Users");
+  const db = client.db("Aniflix");
+  const col = db.collection("Users");
 
-    const myDoc = await col.findOne({ _id: user.email});
-    
-    res.status(200).json({ message: myDoc })
+  const myDoc = await col.findOne({ _id: user.email });
+
+  res.status(200).json({ message: myDoc });
 }

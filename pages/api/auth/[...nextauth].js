@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { connectToDatabase } from "../../../lib/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 
 const options = {
   providers: [
@@ -21,16 +21,15 @@ const options = {
       if (!myDoc) {
         const toInsert = {
           _id: user.email,
-          favorites: [
-          ]
-        }
-        
+          favorites: [],
+        };
+
         await col.insertOne(toInsert);
       }
 
-      return true
+      return true;
     },
-  }
+  },
 };
 
 export default (req, res) => NextAuth(req, res, options);
