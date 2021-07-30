@@ -2,7 +2,6 @@ import Layout from "../layout/layout";
 import { Fragment } from "react";
 import { GetSeason, GetYear } from "../util/helper";
 import Head from "next/head";
-import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function Home(props) {
   const { mp, ra, top } = props;
