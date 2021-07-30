@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { signIn, signOut, useSession } from "next-auth/client";
 const Navbar = () => {
+  const [session, loading] = useSession();
   const [isOpen, setIsOpen] = useState(false);
 
   let test = (
     <div className="absolute  flex flex-col bg-lighterBG rounded divide-y-2 right-0 z-10 shadow-lg mt-2">
       <Link href="/" passHref={true}>
         <button className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display  transition duration-300 rounded">
-          Picture
+          Avatar
         </button>
       </Link>
 
@@ -18,6 +19,23 @@ const Navbar = () => {
           Favorites
         </button>
       </Link>
+      <button
+        onClick={signIn}
+        className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG rounded"
+      >
+        Sign In
+      </button>
+      <button
+        onClick={signOut}
+        className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG rounded"
+      >
+        sign out
+      </button>
+      {session && (
+        <div className="p-4 hover:bg-mainBG focus:bg-secondaryBG font-display transition delay-100 duration-200 hover:text-brightBG rounded">
+          {session.user.name} <br />
+        </div>
+      )}
     </div>
   );
 
