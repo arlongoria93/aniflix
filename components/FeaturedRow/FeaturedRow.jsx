@@ -7,7 +7,7 @@ const FeaturedRow = (props) => {
   const [randomNumber, setRandomNumber] = useState(0);
   const [featuredAnime, setFeaturedAnime] = useState();
   const { data } = props;
-
+  //
   useEffect(() => {
     setRandomNumber(Math.floor(Math.random() * data.length));
     console.log(["Random number", randomNumber]);
