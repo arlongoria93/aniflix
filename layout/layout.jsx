@@ -2,8 +2,10 @@ import FeaturedRow from "../components/FeaturedRow/FeaturedRow";
 import FlixRow from "../components/FlixRow/FlixRow";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const Layout = (props) => {
+  const [session, loading] = useSession();
   const { mpMedia, topMedia, raMedia } = props;
   return (
     <div className="bg-mainBG h-screen">
@@ -26,6 +28,13 @@ const Layout = (props) => {
           <FlixRow nav={"idk"} title={"Top 2021"} media={topMedia} />
         </div>
       </div>
+      <button onClick={signIn}>Sign In</button>
+      <button onClick={signOut}>sign out</button>
+      {session && (
+        <>
+          Signed in as {session.user.email} <br />
+        </>
+      )}
       <Footer />
     </div>
   );
