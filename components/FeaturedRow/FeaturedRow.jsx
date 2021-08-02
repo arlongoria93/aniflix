@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const FeaturedRow = (props) => {
-  const [randomNumber, setRandomNumber] = useState(0);
   const [featuredAnime, setFeaturedAnime] = useState();
   const { data } = props;
 
