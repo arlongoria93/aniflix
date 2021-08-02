@@ -14,7 +14,13 @@ const FeaturedRow = (props) => {
   return (
     <section className="p-8 flex flex-col space-y-8">
       {featuredAnime && (
-        <Image src={featuredAnime.bannerImage} width={1200} height={250} />
+        <Image
+          src={featuredAnime.bannerImage}
+          objectFit="contain"
+          width={1200}
+          height={250}
+          className="rounded shadow"
+        />
       )}
       {featuredAnime && (
         <h1 className="text-white text-2xl">
