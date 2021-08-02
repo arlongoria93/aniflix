@@ -7,22 +7,10 @@ const FeaturedRow = (props) => {
   const [randomNumber, setRandomNumber] = useState(0);
   const [featuredAnime, setFeaturedAnime] = useState();
   const { data } = props;
-  //
+
   useEffect(() => {
-    setRandomNumber(Math.floor(Math.random() * data.length));
-    console.log(["Random number", randomNumber]);
+    setFeaturedAnime(data[Math.floor(Math.random() * data.length)]);
   }, []);
-
-  useEffect(() => {
-    setFeaturedAnime(data[randomNumber]);
-    console.log(featuredAnime);
-  }, [randomNumber]);
-
-  // const randomAnime = featuredAnime;
-  // const linkUrl = `/anime/${randomAnime.id}`;
-  // const url = `${randomAnime.bannerImage}`;
-
-  // const mobilePhone = `${randomAnime.coverImage.extraLarge}`;
 
   return (
     <section className="p-8 flex flex-col space-y-8">
